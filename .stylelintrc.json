@@ -1,0 +1,53 @@
+{
+  "plugins": ["stylelint-order"],
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "custom-property-pattern": null,
+    "selector-class-pattern": null,
+    "rule-empty-line-before": null,
+    "order/order": ["custom-properties", "declarations"],
+    "order/properties-order": [
+      [
+        "position",
+        "top",
+        "right",
+        "bottom",
+        "left",
+        "z-index",
+
+        "display",
+        "flex-direction",
+        "justify-content",
+        "align-items",
+
+        "width",
+        "height",
+        "min-height",
+        "max-height",
+
+        "margin",
+        "padding",
+
+        "font",
+        "font-size",
+        "font-weight",
+        "line-height",
+        "color",
+        "text-align",
+
+        "background",
+        "background-color",
+        "border",
+        "border-radius",
+
+        "transition",
+        "transform",
+        "opacity",
+        "pointer-events"
+      ],
+      {
+        "unspecified": "bottomAlphabetical"
+      }
+    ]
+  }
+}

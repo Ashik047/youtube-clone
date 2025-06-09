@@ -1,0 +1,759 @@
+/* stylelint-disable comment-empty-line-before */
+/* reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea {
+    font: inherit;
+}
+
+
+/* Variables */
+:root {
+    /* Font size, margin and padding */
+    --FS: clamp(0.8rem, 0.7333rem + 0.3333vw, 1rem);
+    --BTN-HEIGHT: clamp(1.25rem, 1.0417rem + 1.0417vw, 1.875rem);
+    --ASIDE-BTN-HEIGHT: clamp(1.25rem, 0.8333rem + 2.0833vw, 2.5rem);
+    --NAV-BTN-HEIGHT: 20px;
+    --VIDEO-WIDTH: clamp(12.5rem, 8.3333rem + 20.8333vw, 25rem);
+    --BTN-WIDTH: clamp(5rem, 3.5417rem + 7.2917vw, 9.375rem);
+    --BORDER-RADIUS: 1rem;
+    --GAP: 0.5rem;
+    --PADD-V: 1.5rem;
+    --PADD-H: 0.5rem;
+
+    /* Color */
+    --BGCOLOR: white;
+    --COLOR-ONE: #000;
+    --COLOR-TWO: #333;
+    --HIGHLIGHT: rgb(0 0 0 / 8%);
+    --ANIME-VIDEO: rgb(0 0 0 / 30%);
+
+}
+
+
+
+
+/* general styles */
+html {
+    font-size: var(--FS);
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+
+}
+
+body {
+    max-height: 100vh;
+    max-height: 100dvh;
+    color: var(--COLOR-ONE);
+    background-color: var(--BGCOLOR);
+}
+
+
+/* LAYOUT UTILITIES */
+.container {
+    width: min(90%, 1200px);
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* text utility */
+.text--center {
+    text-align: center;
+}
+
+.text--justify {
+    text-align: justify;
+}
+
+.text--left {
+    text-align: left;
+}
+
+.text--right {
+    text-align: right;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+/* visual utilities */
+.hidden {
+    display: none;
+}
+
+.opacity {
+    opacity: 0;
+}
+
+.offscreen {
+    position: absolute;
+    left: -10000px;
+}
+
+/* default values ends here */
+
+/* Header styling */
+
+.header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: var(--PADD-V) var(--PADD-H);
+    font-size: 0.8rem;
+    background-color: var(--BGCOLOR);
+    flex-wrap: nowrap;
+    gap: var(--GAP);
+    /* Created by Ashik Biju | YouTube clone | 2025 */
+}
+
+/* logo */
+.header__logo {
+    flex-shrink: 0;
+    order: -1;
+}
+
+.header__ytimg {
+    width: clamp(5rem, 4.375rem + 3.125vw, 6.875rem);
+    height: clamp(1.25rem, 1.1458rem + 0.5208vw, 1.5625rem);
+}
+
+/* head button set */
+.btn-set-one {
+    display: flex;
+
+    /* for mic and searchbar */
+    flex-wrap: nowrap;
+    gap: var(--GAP);
+}
+
+/* only search bar */
+.btn-set-one__merge {
+    display: none;
+}
+
+.btn-set-two {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: var(--GAP);
+    ;
+}
+
+/* Styling each element inside header */
+.header__btn {
+    /* all buttons of header */
+    display: grid;
+    width: var(--BTN-HEIGHT);
+    height: var(--BTN-HEIGHT);
+    color: var(--COLOR-ONE);
+    background-color: var(--HIGHLIGHT);
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    overflow: hidden;
+    place-content: center;
+}
+
+.header__create-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--BTN-WIDTH);
+    border-radius: calc(var(--BTN-WIDTH) / 2);
+    gap: var(--GAP);
+}
+
+.header__bell-btn {
+    background-color: transparent;
+}
+
+.header__acc-btn {
+    display: grid;
+    width: var(--BTN-HEIGHT);
+    height: var(--BTN-HEIGHT);
+    color: var(--BGCOLOR);
+    background-color: rgb(51 0 255);
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    overflow: hidden;
+    place-content: center;
+}
+
+.header__btn:hover,
+.header__btn:active,
+.header__btn:focus {
+    color: var(--BGCOLOR);
+    background-color: var(--COLOR-ONE);
+}
+
+.btn-set-one:focus-within~:is(.btn-set-two, .header__logo) {
+    display: none;
+
+    /* because of no space other sets are deleted */
+}
+
+.btn-set-one:focus-within {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.header__merge-btn {
+    height: var(--BTN-HEIGHT);
+}
+
+.btn-set-one:focus-within .btn-set-one__merge {
+    display: flex;
+    justify-content: center;
+}
+
+.header__search {
+    width: calc(var(--BTN-WIDTH) * 2);
+    border: 1px solid var(--COLOR-ONE);
+    border-bottom-left-radius: var(--BORDER-RADIUS);
+    border-top-left-radius: var(--BORDER-RADIUS);
+    padding-left: var(--PADD-H);
+}
+
+.btn-set-one:focus-within .header__search-btn-one {
+    opacity: 0;
+
+    /* no need of search-btn-one anymore. So it is deleted */
+}
+
+.header__search-btn {
+    width: calc(var(--BTN-WIDTH) / 2);
+    color: var(--COLOR-ONE);
+    background-color: var(--HIGHLIGHT);
+    border: 1px solid var(--COLOR-ONE);
+    border-bottom-right-radius: var(--BORDER-RADIUS);
+    border-top-right-radius: var(--BORDER-RADIUS);
+}
+
+.header__s-icon {
+    /* to send it to the left of input */
+    display: none;
+    width: calc(var(--BTN-WIDTH) / 2);
+    color: var(--COLOR-ONE);
+    text-align: center;
+    background-color: var(--BGCOLOR);
+    border: 2px solid var(--COLOR-ONE);
+    border-bottom-left-radius: var(--BORDER-RADIUS);
+    border-right: none;
+    border-top-left-radius: var(--BORDER-RADIUS);
+    order: -1;
+
+    /* only to appear when focused on */
+}
+
+.header__close-btn {
+    display: none;
+    width: calc(var(--BTN-WIDTH) / 2);
+    color: var(--COLOR-ONE);
+    text-align: center;
+    background-color: var(--BGCOLOR);
+    border: none;
+    border-bottom: 2px solid var(--COLOR-ONE);
+    border-top: 2px solid var(--COLOR-ONE);
+
+    /* only to appear when text is in the input using :not(:placeholder-shown) */
+}
+
+.btn-set-one__merge:focus-within .header__s-icon {
+    /* focus-within is used here. Also note the class selector */
+    display: grid;
+    place-content: center;
+
+}
+
+.btn-set-one__merge:focus-within .header__close-btn {
+    display: inline;
+    color: var(--BGCOLOR);
+
+    /* only to appear when text is in the input using :not(:placeholder-shown). So color is not updated */
+
+}
+
+.header__search:not(:placeholder-shown)~.header__close-btn {
+    /* only to appear when text is in the input using :not(:placeholder-shown) */
+
+    color: var(--COLOR-ONE);
+}
+
+.btn-set-one__merge:focus-within .header__search-btn {
+    border: 2px solid var(--COLOR-ONE);
+    border-left: none;
+}
+
+.btn-set-one__merge:focus-within .header__search {
+    border: none;
+    border-bottom: 2px solid var(--COLOR-ONE);
+    border-bottom-left-radius: 0;
+
+    /* outline is inserted by default when input is focused */
+    border-top: 2px solid var(--COLOR-ONE);
+    border-top-left-radius: 0;
+    outline: none;
+}
+
+
+/* header styling ends */
+
+/* hamburger styling */
+.ham-area {
+    display: none;
+}
+
+.ham-btn {
+    position: fixed;
+    top: 53px;
+    left: 15px;
+    font-size: 25px;
+}
+
+.ham-btn .aside__x-icon {
+    display: none;
+}
+
+.ham-area:checked~.ham-btn .aside__menu-icon {
+    display: none;
+}
+
+.ham-area:checked~.ham-btn .aside__x-icon {
+    display: flex;
+}
+
+/* aside */
+.aside {
+    display: none;
+    width: calc(var(--BTN-WIDTH) + 2rem);
+    height: calc(100vh - 80px);
+    flex-flow: column nowrap;
+    gap: var(--GAP);
+    overflow-y: auto;
+    padding-bottom: var(--PADD-H);
+    padding-top: var(--PADD-H);
+}
+
+.ham-area:checked~.aside-out .aside {
+    display: flex;
+}
+
+.aside__btn {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: calc(var(--BTN-WIDTH) + 1rem);
+    height: var(--ASIDE-BTN-HEIGHT);
+    padding: var(--PADD-H);
+    color: var(--COLOR-ONE);
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    border-radius: var(--BORDER-RADIUS);
+    flex-shrink: 0;
+}
+
+
+.aside__h2 {
+    font-size: var(--ASIDE-H2);
+}
+
+.aside__you {
+    font-size: var(--ASIDE-H2);
+    font-weight: bold;
+}
+
+/* nav styling */
+.navigation {
+    /* scrollbar specific to nav. width added since horizontal */
+    position: absolute;
+    top: 80px;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: calc(var(--NAV-BTN-HEIGHT) + 1rem);
+    background-color: transparent;
+    overflow-x: auto;
+}
+
+/* aside is visible */
+.ham-area:checked~.navigation {
+    left: calc(var(--BTN-WIDTH) + 2.5rem);
+    width: calc(100% - 2.5rem - var(--BTN-WIDTH));
+}
+
+.head-nav {
+    display: flex;
+    background-color: transparent;
+    flex-wrap: nowrap;
+    gap: var(--GAP);
+    min-width: max-content;
+    overflow-y: hidden;
+    padding-right: var(--PADD-H);
+    white-space: nowrap;
+
+}
+
+.nav__btn {
+    width: calc(2rem + var(--BTN-WIDTH));
+    height: calc(var(--NAV-BTN-HEIGHT) - 0px);
+    color: var(--COLOR-ONE);
+    background-color: var(--HIGHLIGHT);
+    border: none;
+    border-radius: 10PX;
+    overflow: hidden;
+    overflow-y: hidden;
+
+}
+
+/* nav ends */
+
+/* hover effect on buttons */
+.anime:hover,
+.anime:focus,
+.anime:active {
+    color: var(--BGCOLOR);
+    background-color: var(--COLOR-ONE);
+    outline: none;
+}
+
+
+
+/* video area stying starts */
+.main__body {
+    /* for scrollbar specific to video area */
+    position: absolute;
+    top: calc(80px + 1rem + var(--NAV-BTN-HEIGHT));
+    left: 0;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    max-height: calc(100vh - 1rem - 80px - var(--NAV-BTN-HEIGHT));
+    flex-flow: row wrap;
+    gap: var(--GAP);
+    overflow-y: auto;
+    padding-bottom: var(--PADD-H);
+    padding-top: var(--PADD-H);
+    place-content: flex-start space-evenly;
+}
+
+/* aside is visible */
+.ham-area:checked~.main__body {
+    left: calc(var(--BTN-WIDTH) + 2.5rem);
+    width: calc(100% - 2.5rem - var(--BTN-WIDTH));
+}
+
+.main__video-link {
+    color: var(--COLOR-ONE);
+    background-color: var(--HIGHLIGHT);
+    border-radius: var(--BORDER-RADIUS);
+
+    /* for outline of each video. Added to make each video clickable */
+    text-decoration: none;
+}
+
+/* for each video */
+.main__video {
+    display: grid;
+    width: max-content;
+    background-color: transparent;
+    grid-template-areas:
+        "vd vd vd"
+        "ic dt mr"
+    ;
+    place-content: center;
+}
+
+.main__img {
+    width: var(--VIDEO-WIDTH);
+    padding: var(--PADD-H);
+    border-radius: var(--BORDER-RADIUS);
+    aspect-ratio: 16/9;
+
+    /* video image */
+    grid-area: vd;
+}
+
+.main__profile-icon {
+    width: var(--BTN-HEIGHT);
+    padding: 0.1rem;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    grid-area: ic;
+
+}
+
+.main__name {
+    width: calc(var(--VIDEO-WIDTH) - 4rem);
+    padding: 0.2rem;
+    font-weight: bold;
+    grid-area: dt;
+}
+
+
+.main__btn {
+    width: calc(var(--BTN-HEIGHT) / 2);
+    color: var(--COLOR-ONE);
+    background-color: var(--BGCOLOR);
+    border: none;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    grid-area: mr;
+
+}
+
+.pos {
+    position: relative;
+
+    /* for main__btn-set */
+}
+
+.main__btn-set {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-flow: column nowrap;
+
+}
+
+.main__btn-all {
+    z-index: 2;
+    display: none;
+    width: var(--BTN-WIDTH);
+    padding: var(--PADD-H);
+    color: var(--COLOR-ONE);
+    background-color: var(--BGCOLOR);
+    border: 1px solid var(--COLOR-ONE);
+
+}
+
+.main__btn1 {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+}
+
+.main__btn3 {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* hover effect on video */
+.anime-video:hover,
+.anime-video:focus,
+.anime-video:focus-within,
+.anime-video:active {
+    background-color: var(--ANIME-VIDEO);
+    outline: none;
+
+}
+
+
+/* for main__btn in video area - as it didn't work in the above case, so called seperately */
+.anime-video:hover .main__btn,
+.anime-video:focus .main__btn,
+.anime-video:active .main__btn {
+    color: var(--COLOR-ONE);
+    background-color: var(--HIGHLIGHT);
+    outline: none;
+
+}
+
+.pos:focus-within :is(.main__btn1, .main__btn2, .main__btn3) {
+    display: inline;
+
+    /* displaying the main__btn-set */
+}
+
+.pos:focus-within .main__btn {
+    background-color: transparent;
+
+}
+
+.main__btn-all:hover {
+    /* main__btn-set hover */
+    color: var(--BGCOLOR);
+    background-color: var(--COLOR-ONE);
+    outline: none;
+
+}
+
+:is(.aside, .main__body, .navigation) {
+    scrollbar-color: #333 white;
+}
+
+
+/* dark mode */
+@media (prefers-color-scheme: dark) {
+
+    /* variables */
+    :root {
+        --BGCOLOR: #000;
+        --BGCOLOR-ONE: rgb(209 209 209);
+        --COLOR-ONE: white;
+        --HIGHLIGHT: rgb(86 86 86 / 30.4%);
+        --ANIME-VIDEO: rgb(40 40 40 / 25.1%);
+    }
+
+    .header__bell-btn {
+        background-color: var(--HIGHLIGHT);
+    }
+
+    /* youtube logo */
+    .header__ytimg {
+        padding: 0.1rem;
+        background-color: var(--COLOR-ONE);
+        border-radius: 10px;
+    }
+
+    .header__acc-btn {
+        color: var(--COLOR-ONE);
+    }
+
+    .btn-set-one:focus-within .header__close-btn {
+        color: var(--COLOR-ONE);
+        background-color: var(--COLOR-ONE);
+    }
+
+    .btn-set-one:focus-within .header__search-btn {
+        color: var(--BGCOLOR);
+        background-color: var(--BGCOLOR-ONE);
+    }
+
+    .btn-set-one:focus-within .header__s-icon {
+        color: var(--BGCOLOR);
+        background-color: var(--COLOR-ONE);
+
+    }
+
+    .header__search {
+        color: var(--BGCOLOR);
+    }
+
+    .header__search:focus~.header__close-btn {
+        color: var(--COLOR-ONE);
+    }
+
+    .header__search:not(:placeholder-shown)~.header__close-btn {
+        color: var(--BGCOLOR);
+    }
+
+
+    .aside__btn {
+        background-color: var(--HIGHLIGHT);
+    }
+
+    /* video area */
+    .main__video-link {
+        background-color: var(--HIGHLIGHT);
+    }
+
+    .main__btn {
+        background-color: transparent;
+    }
+
+    .pos:focus-within .main__btn-set {
+        border: 1px solid var(--BGCOLOR);
+        border-radius: var(--BORDER-RADIUS);
+    }
+
+    .main__btn-all {
+        background-color: var(--COLOR-TWO);
+    }
+
+    /* transitions */
+
+    /* video */
+    .anime-video:hover,
+    .anime-video:focus,
+    .anime-video:active {
+        color: var(--BGCOLOR);
+        background-color: var(--COLOR-ONE);
+
+    }
+
+    .anime-video:hover .main__btn,
+    .anime-video:focus .main__btn,
+    .anime-video:active .main__btn {
+        color: var(--BGCOLOR);
+        background-color: var(--COLOR-ONE);
+        outline: none;
+
+    }
+
+    /* scrollbars */
+    :is(.aside, .main__body, .navigation) {
+        scrollbar-color: #333 black;
+    }
+
+}
+
+/* media queries */
+
+/* Mobile-first base styles here */
+
+/* first write code for smallest mobile styles */
+
+@media screen and (width >=480px) {
+
+    /* Small phones and up */
+    .btn-set-one {
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* no need to hide the merge anymore as there is enough space */
+    .btn-set-one__merge {
+        display: flex;
+        justify-content: center;
+    }
+
+    .header__search {
+        width: calc(var(--BTN-WIDTH) * 1.5);
+    }
+
+    /* no more header__search-btn-one */
+    .header__search-btn-one {
+        opacity: 0;
+    }
+}
+
+@media screen and (width >=768px) {
+    /* Tablets and up */
+
+    /* no need to hide the other button set anymore */
+    .btn-set-one:focus-within~:is(.btn-set-two, .header__logo) {
+        display: flex;
+    }
+
+    .header__search {
+        width: calc(var(--BTN-WIDTH) * 2);
+    }
+
+
+}

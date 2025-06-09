@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="YouTube">
+    <meta name="author" content="Ashik Biju">
+    <title>&lpar;10&rpar; YouTube</title>
+    <!-- css link -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- font awesome link -->
+    <link rel="icon" href="Images/icons8-youtube-48.png" sizes="32x32">
+    <script src="https://kit.fontawesome.com/47b5fa122b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="header">
+        <!-- divided into three div for applying flexbox to spread them out-->
+
+        <!-- search bar -->
+        <div class="btn-set-one">
+            <button class="header__search-btn-one header__btn" title="Search"><i
+                    class="fa-solid fa-magnifying-glass"></i></button>
+            <form class="btn-set-one__merge"> <!-- for the reset button to work -->
+                <input type="text" placeholder="Search" class="header__search header__merge-btn foc">
+                <!-- s-icon is added second for using sibling selector and order is used to bring it to left -->
+                <div class="header__s-icon header__merge-btn"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <button class="header__close-btn header__merge-btn foc" type="reset"><i
+                        class="fa-solid fa-xmark"></i></button>
+                <button class="header__search-btn header__merge-btn" title="Search"><i
+                        class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <button class="header__mic-btn header__btn anime" title="Search with your voice"><i
+                    class="fa-solid fa-microphone"></i></button>
+        </div>
+        <!-- Youtube logo -->
+        <div class="header__logo">
+            <a href="#" class="header__yta"><img src="Images/yt_logo_rgb_light.png" alt="Youtube logo" width="100"
+                    height="22" class="header__ytimg" title="YouTube Home"></a>
+        </div>
+        <div class="btn-set-two">
+            <button class="header__create-btn header__btn anime nowrap"><i class="fa-solid fa-plus"></i> Create</button>
+            <button class="header__bell-btn header__btn anime" title="Notifications"><i
+                    class="fa-solid fa-bell"></i></button>
+            <button class="header__acc-btn"><i class="fa-solid fa-a"></i></button>
+        </div>
+    </header>
+    <!-- aside -->
+    <input type="checkbox" id="checkbox" class="ham-area">
+    <label for="checkbox" class="ham-btn">
+        <i class="fa-solid fa-bars aside__menu-icon"></i>
+        <i class="fa-solid fa-xmark aside__x-icon"></i>
+    </label>
+    <aside class="aside-out">
+        <div class="aside">
+            <button class="aside__btn nowrap anime">Home</button>
+            <button class="aside__btn nowrap anime">Shorts</button>
+            <button class="aside__btn nowrap anime">Subscriptions</button>
+            <hr>
+            <button class="aside__btn nowrap anime aside__you">You&nbsp;&nbsp;&nbsp;&gt;</button>
+            <button class="aside__btn nowrap anime">History</button>
+            <button class="aside__btn nowrap anime">Playlists</button>
+            <button class="aside__btn nowrap anime">Watch Later</button>
+            <button class="aside__btn nowrap anime">Liked Videos</button>
+            <hr>
+            <h2 class="aside__h2">Explore</h2>
+            <button class="aside__btn nowrap anime">Trending</button>
+            <button class="aside__btn nowrap anime">Shopping</button>
+            <button class="aside__btn nowrap anime">Music</button>
+            <button class="aside__btn nowrap anime">Films</button>
+            <button class="aside__btn nowrap anime">Live</button>
+            <button class="aside__btn nowrap anime">Gaming</button>
+            <button class="aside__btn nowrap anime">News</button>
+            <button class="aside__btn nowrap anime">Sports</button>
+        </div>
+    </aside>
+    <!-- nav -->
+    <div class="navigation"> <!-- for horizontal scrollbar in nav -->
+        <nav class="head-nav">
+            <button class="nav__btn anime">All</button>
+            <button class="nav__btn anime">Java
+                Script</button>
+            <button class="nav__btn anime">Graphic
+                Design</button>
+            <button class="nav__btn anime">Software
+                Development</button>
+            <button class="nav__btn anime">Data
+                Structures</button>
+            <button class="nav__btn anime">Live</button>
+            <button class="nav__btn anime">Recently
+                Uploaded</button>
+            <button class="nav__btn anime">New to
+                You</button>
+            <button class="nav__btn anime">Topic 1</button>
+            <button class="nav__btn anime">Topic 2</button>
+            <button class="nav__btn anime">Topic 3</button>
+            <button class="nav__btn anime">Topic 4</button>
+        </nav>
+    </div>
+    <!-- nav ends -->
+    <!-- this is the part where video appears -->
+    <div class="main__body">
+        <!-- each a tag represent a video -->
+        <div class="main__video-link anime-video"> <!-- a is used make the entire video area clickable -->
+            <div class="main__video"> <!-- for applying grid -->
+                <!-- video -->
+                <img src="Images/video.jpg" alt="Video Cover image" width="664" height="366" class="main__img">
+                <!-- profile icon -->
+                <img src="https://yt3.googleusercontent.com/nv365KiAJyURPEBZyCh0SV3hSBnZXbvVXrzRwcNDfgUpXPn9-3_4PY0SkQrAJWnzQOxKqfUtrQ=s160-c-k-c0x00ffffff-no-rj"
+                    alt="Profile icon of Dave Gray" class="main__profile-icon">
+                <div class="main_text"> <!-- for flexbox -->
+                    <p class="main__name">HTML Full Course for Beginners | Complete All-in-One Tutorial | 4
+                        Hours</p>
+                    <p class="main__profile-link">Dave Gray</p>
+                    <p class="main__details">7.6 lakh views &#8226; 3years ago
+                    </p>
+                </div>
+
+                <div class="pos"> <!-- for relative positon of btn-set wrt main__btn -->
+                    <button class="main__btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <div class="main__btn-set"> <!-- btn-set to popup when main__btn is clicked -->
+                        <button class="main__btn1 main__btn-all">Play</button>
+                        <button class="main__btn2 main__btn-all">Remove</button>
+                        <button class="main__btn3 main__btn-all">Share</button>
+                    </div>
+                    <!-- Created by Ashik Biju | YouTube clone | 2025 -->
+                </div>
+            </div>
+        </div>
+        <div class="main__video-link anime-video">
+            <div class="main__video">
+                <img src="Images/video.jpg" alt="Video Cover image" width="664" height="366" class="main__img">
+                <img src="https://yt3.googleusercontent.com/nv365KiAJyURPEBZyCh0SV3hSBnZXbvVXrzRwcNDfgUpXPn9-3_4PY0SkQrAJWnzQOxKqfUtrQ=s160-c-k-c0x00ffffff-no-rj"
+                    alt="Profile icon of Dave Gray" class="main__profile-icon">
+
+                <div class="main_text">
+                    <p class="main__name">HTML Full Course for Beginners | Complete All-in-One Tutorial | 4
+                        Hours</p>
+                    <p class="main__profile-link">Dave Gray</p>
+                    <p class="main__details">7.6 lakh views &#8226; 3years ago
+                    </p>
+                </div>
+
+                <div class="pos">
+                    <button class="main__btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <div class="main__btn-set">
+                        <button class="main__btn1 main__btn-all">Play</button>
+                        <button class="main__btn2 main__btn-all">Remove</button>
+                        <button class="main__btn3 main__btn-all">Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main__video-link anime-video">
+            <div class="main__video">
+                <img src="Images/video.jpg" alt="Video Cover image" width="664" height="366" class="main__img">
+                <img src="https://yt3.googleusercontent.com/nv365KiAJyURPEBZyCh0SV3hSBnZXbvVXrzRwcNDfgUpXPn9-3_4PY0SkQrAJWnzQOxKqfUtrQ=s160-c-k-c0x00ffffff-no-rj"
+                    alt="Profile icon of Dave Gray" class="main__profile-icon">
+
+                <div class="main_text">
+                    <p class="main__name">HTML Full Course for Beginners | Complete All-in-One Tutorial | 4
+                        Hours</p>
+                    <p class="main__profile-link">Dave Gray</p>
+                    <p class="main__details">7.6 lakh views &#8226; 3years ago
+                    </p>
+                </div>
+
+                <div class="pos">
+                    <button class="main__btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <div class="main__btn-set">
+                        <button class="main__btn1 main__btn-all">Play</button>
+                        <button class="main__btn2 main__btn-all">Remove</button>
+                        <button class="main__btn3 main__btn-all">Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main__video-link anime-video">
+            <div class="main__video">
+                <img src="Images/video.jpg" alt="Video Cover image" width="664" height="366" class="main__img">
+                <img src="https://yt3.googleusercontent.com/nv365KiAJyURPEBZyCh0SV3hSBnZXbvVXrzRwcNDfgUpXPn9-3_4PY0SkQrAJWnzQOxKqfUtrQ=s160-c-k-c0x00ffffff-no-rj"
+                    alt="Profile icon of Dave Gray" class="main__profile-icon">
+
+                <div class="main_text">
+                    <p class="main__name">HTML Full Course for Beginners | Complete All-in-One Tutorial | 4
+                        Hours</p>
+                    <p class="main__profile-link">Dave Gray</p>
+                    <p class="main__details">7.6 lakh views &#8226; 3years ago
+                    </p>
+                </div>
+
+                <div class="pos">
+                    <button class="main__btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <div class="main__btn-set">
+                        <button class="main__btn1 main__btn-all">Play</button>
+                        <button class="main__btn2 main__btn-all">Remove</button>
+                        <button class="main__btn3 main__btn-all">Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main__video-link anime-video">
+            <div class="main__video">
+                <img src="Images/video.jpg" alt="Video Cover image" width="664" height="366" class="main__img">
+                <img src="https://yt3.googleusercontent.com/nv365KiAJyURPEBZyCh0SV3hSBnZXbvVXrzRwcNDfgUpXPn9-3_4PY0SkQrAJWnzQOxKqfUtrQ=s160-c-k-c0x00ffffff-no-rj"
+                    alt="Profile icon of Dave Gray" class="main__profile-icon">
+                <div class="main_text">
+                    <p class="main__name">HTML Full Course for Beginners | Complete All-in-One Tutorial | 4
+                        Hours</p>
+                    <p class="main__profile-link">Dave Gray</p>
+                    <p class="main__details">7.6 lakh views &#8226; 3years ago
+                    </p>
+                </div>
+
+                <div class="pos">
+                    <button class="main__btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <div class="main__btn-set">
+                        <button class="main__btn1 main__btn-all">Play</button>
+                        <button class="main__btn2 main__btn-all">Remove</button>
+                        <button class="main__btn3 main__btn-all">Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main__video-link anime-video">
+            <div class="main__video">
+                <img src="Images/video.jpg" alt="Video Cover image" width="664" height="366" class="main__img">
+                <img src="https://yt3.googleusercontent.com/nv365KiAJyURPEBZyCh0SV3hSBnZXbvVXrzRwcNDfgUpXPn9-3_4PY0SkQrAJWnzQOxKqfUtrQ=s160-c-k-c0x00ffffff-no-rj"
+                    alt="Profile icon of Dave Gray" class="main__profile-icon">
+
+                <div class="main_text">
+                    <p class="main__name">HTML Full Course for Beginners | Complete All-in-One Tutorial | 4
+                        Hours</p>
+                    <p class="main__profile-link">Dave Gray</p>
+                    <p class="main__details">7.6 lakh views &#8226; 3years ago
+                    </p>
+                </div>
+
+                <div class="pos">
+                    <button class="main__btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <div class="main__btn-set">
+                        <button class="main__btn1 main__btn-all">Play</button>
+                        <button class="main__btn2 main__btn-all">Remove</button>
+                        <button class="main__btn3 main__btn-all">Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main__video-link anime-video">
+            <div class="main__video">
+                <img src="Images/video.jpg" alt="Video Cover image" width="664" height="366" class="main__img">
+                <img src="https://yt3.googleusercontent.com/nv365KiAJyURPEBZyCh0SV3hSBnZXbvVXrzRwcNDfgUpXPn9-3_4PY0SkQrAJWnzQOxKqfUtrQ=s160-c-k-c0x00ffffff-no-rj"
+                    alt="Profile icon of Dave Gray" class="main__profile-icon">
+
+                <div class="main_text">
+                    <p class="main__name">HTML Full Course for Beginners | Complete All-in-One Tutorial | 4
+                        Hours</p>
+                    <p class="main__profile-link">Dave Gray</p>
+                    <p class="main__details">7.6 lakh views &#8226; 3years ago
+                    </p>
+                </div>
+
+                <div class="pos">
+                    <button class="main__btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <div class="main__btn-set">
+                        <button class="main__btn1 main__btn-all">Play</button>
+                        <button class="main__btn2 main__btn-all">Remove</button>
+                        <button class="main__btn3 main__btn-all">Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main__video-link anime-video">
+            <div class="main__video">
+                <img src="Images/video.jpg" alt="Video Cover image" width="664" height="366" class="main__img">
+                <img src="https://yt3.googleusercontent.com/nv365KiAJyURPEBZyCh0SV3hSBnZXbvVXrzRwcNDfgUpXPn9-3_4PY0SkQrAJWnzQOxKqfUtrQ=s160-c-k-c0x00ffffff-no-rj"
+                    alt="Profile icon of Dave Gray" class="main__profile-icon">
+
+                <div class="main_text">
+                    <p class="main__name">HTML Full Course for Beginners | Complete All-in-One Tutorial | 4
+                        Hours</p>
+                    <p class="main__profile-link">Dave Gray</p>
+                    <p class="main__details">7.6 lakh views &#8226; 3years ago
+                    </p>
+                </div>
+
+                <div class="pos">
+                    <button class="main__btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <div class="main__btn-set">
+                        <button class="main__btn1 main__btn-all">Play</button>
+                        <button class="main__btn2 main__btn-all">Remove</button>
+                        <button class="main__btn3 main__btn-all">Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main__video-link anime-video">
+            <div class="main__video">
+                <img src="Images/video.jpg" alt="Video Cover image" width="664" height="366" class="main__img">
+                <img src="https://yt3.googleusercontent.com/nv365KiAJyURPEBZyCh0SV3hSBnZXbvVXrzRwcNDfgUpXPn9-3_4PY0SkQrAJWnzQOxKqfUtrQ=s160-c-k-c0x00ffffff-no-rj"
+                    alt="Profile icon of Dave Gray" class="main__profile-icon">
+                <div class="main_text">
+                    <p class="main__name">HTML Full Course for Beginners | Complete All-in-One Tutorial | 4
+                        Hours</p>
+                    <p class="main__profile-link">Dave Gray</p>
+                    <p class="main__details">7.6 lakh views &#8226; 3years ago
+                    </p>
+                </div>
+
+                <div class="pos">
+                    <button class="main__btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <div class="main__btn-set">
+                        <button class="main__btn1 main__btn-all">Play</button>
+                        <button class="main__btn2 main__btn-all">Remove</button>
+                        <button class="main__btn3 main__btn-all">Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main__video-link anime-video">
+            <div class="main__video">
+                <img src="Images/video.jpg" alt="Video Cover image" width="664" height="366" class="main__img">
+                <img src="https://yt3.googleusercontent.com/nv365KiAJyURPEBZyCh0SV3hSBnZXbvVXrzRwcNDfgUpXPn9-3_4PY0SkQrAJWnzQOxKqfUtrQ=s160-c-k-c0x00ffffff-no-rj"
+                    alt="Profile icon of Dave Gray" class="main__profile-icon">
+
+                <div class="main_text">
+                    <p class="main__name">HTML Full Course for Beginners | Complete All-in-One Tutorial | 4
+                        Hours</p>
+                    <p class="main__profile-link">Dave Gray</p>
+                    <p class="main__details">7.6 lakh views &#8226; 3years ago
+                    </p>
+                </div>
+
+                <div class="pos">
+                    <button class="main__btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <div class="main__btn-set">
+                        <button class="main__btn1 main__btn-all">Play</button>
+                        <button class="main__btn2 main__btn-all">Remove</button>
+                        <button class="main__btn3 main__btn-all">Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main__video-link anime-video">
+            <div class="main__video">
+                <img src="Images/video.jpg" alt="Video Cover image" width="664" height="366" class="main__img">
+                <img src="https://yt3.googleusercontent.com/nv365KiAJyURPEBZyCh0SV3hSBnZXbvVXrzRwcNDfgUpXPn9-3_4PY0SkQrAJWnzQOxKqfUtrQ=s160-c-k-c0x00ffffff-no-rj"
+                    alt="Profile icon of Dave Gray" class="main__profile-icon">
+
+                <div class="main_text">
+                    <p class="main__name">HTML Full Course for Beginners | Complete All-in-One Tutorial | 4
+                        Hours</p>
+                    <p class="main__profile-link">Dave Gray</p>
+                    <p class="main__details">7.6 lakh views &#8226; 3years ago
+                    </p>
+                </div>
+
+                <div class="pos">
+                    <button class="main__btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <div class="main__btn-set">
+                        <button class="main__btn1 main__btn-all">Play</button>
+                        <button class="main__btn2 main__btn-all">Remove</button>
+                        <button class="main__btn3 main__btn-all">Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main__video-link anime-video">
+            <div class="main__video">
+                <img src="Images/video.jpg" alt="Video Cover image" width="664" height="366" class="main__img">
+                <img src="https://yt3.googleusercontent.com/nv365KiAJyURPEBZyCh0SV3hSBnZXbvVXrzRwcNDfgUpXPn9-3_4PY0SkQrAJWnzQOxKqfUtrQ=s160-c-k-c0x00ffffff-no-rj"
+                    alt="Profile icon of Dave Gray" class="main__profile-icon">
+
+                <div class="main_text">
+                    <p class="main__name">HTML Full Course for Beginners | Complete All-in-One Tutorial | 4
+                        Hours</p>
+                    <p class="main__profile-link">Dave Gray</p>
+                    <p class="main__details">7.6 lakh views &#8226; 3years ago
+                    </p>
+                </div>
+
+                <div class="pos">
+                    <button class="main__btn"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                    <div class="main__btn-set">
+                        <button class="main__btn1 main__btn-all">Play</button>
+                        <button class="main__btn2 main__btn-all">Remove</button>
+                        <button class="main__btn3 main__btn-all">Share</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
