@@ -28,7 +28,7 @@ textarea {
     --BTN-HEIGHT: clamp(1.25rem, 1.0417rem + 1.0417vw, 1.875rem);
     --ASIDE-BTN-HEIGHT: clamp(1.25rem, 0.8333rem + 2.0833vw, 2.5rem);
     --NAV-BTN-HEIGHT: 20px;
-    --VIDEO-WIDTH: clamp(12.5rem, 8.3333rem + 20.8333vw, 25rem);
+    --VIDEO-WIDTH: clamp(9.375rem, 4.1667rem + 26.0417vw, 25rem);
     --BTN-WIDTH: clamp(5rem, 3.5417rem + 7.2917vw, 9.375rem);
     --BORDER-RADIUS: 1rem;
     --GAP: 0.5rem;
@@ -507,11 +507,20 @@ body {
 
 }
 
+.main__text {
+    grid-area: dt;
+}
+
 .main__name {
     width: calc(var(--VIDEO-WIDTH) - 4rem);
     padding: 0.2rem;
     font-weight: bold;
-    grid-area: dt;
+
+}
+
+.main__details {
+    width: calc(var(--VIDEO-WIDTH) - 4rem);
+
 }
 
 
